@@ -1,0 +1,26 @@
+.container {
+  padding: 20px;
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+
+  .wrapper-posts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .post {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 300px;
+      min-height: 400px;
+
+      &__img {
+        //background: url(assets/img/posts/cat.jpg) center center/cover no-repeat
+      }
+    }
+  }
+}

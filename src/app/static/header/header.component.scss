@@ -1,0 +1,26 @@
+.header {
+  min-height: 100px;
+  background: #1b242f;
+
+  ul {
+    display: flex;
+    padding: 20px;
+
+    li {
+      margin: 15px;
+
+      a {
+        color: hsla(0,0%,100%,.5);
+        font-size: 1.5rem;
+        transition: all .3s;
+        &:hover {
+          color: rgba(255, 255, 255, 0.288);
+        }
+      }
+     .active, .active:hover {
+        color: white;
+
+      }
+    }
+  }
+}
