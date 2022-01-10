@@ -4,33 +4,14 @@
   </h1>
 
     <div class="wrapper-posts">
-      <a routerLink="">
+      <ng-container  *ngFor="let post of posts">
+      <a [routerLink]="['/posts', post.id]">
         <div class="post">
-          <div class="title">Тайтл</div>
-          <div class="post__img" [ngStyle]="{'background-image': 'url(' + img + ')'}"></div>
-          <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit sequi inventore ex rerum labore ipsam nemo pariatur, sunt eveniet nesciunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+          <div class="title">{{post.title}}</div>
+          <div class="post__img" [ngStyle]="{'background-image': 'url(' + post.imgPath + ')'}"></div>
+          <div class="description">{{post.description}}</div>
         </div>
       </a>
-      <a routerLink="">
-      <div class="post">
-        <div class="title">Тайтл</div>
-        <div class="post__img"></div>
-        <div class="description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-      </div>
-    </a>
-    <a routerLink="">
-      <div class="post">
-        <div class="title">Тайтл</div>
-        <div class="post__img"></div>
-        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero modi eos in vel ab natus. Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-      </div>
-    </a>
-      <a routerLink="">
-      <div class="post">
-        <div class="title">Тайтл</div>
-        <div class="post__img"></div>
-        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-      </div>
-    </a>
+    </ng-container>
     </div>
 </div>

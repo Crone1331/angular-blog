@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostDataService } from '../services/post-data.service';
 
 @Component({
   selector: 'app-posts',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  public img : string = '';
-  constructor() { }
+  public posts: PostDataService["postsData"] = [];
+  constructor(
+    private postsService: PostDataService,
+  ) { }
 
   ngOnInit(): void {
-    this.img = 'assets/img/posts/cat.jpg'
-
+    this.posts = this.postsService.postsData;
   }
 
 }
