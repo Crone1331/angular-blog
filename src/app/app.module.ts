@@ -11,6 +11,8 @@ import { HeaderComponent } from './static/header/header.component';
 import { FooterComponent } from './static/footer/footer.component';
 import { MainInfoComponent } from './main-info/main-info.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InfoUserComponent } from './info/info-user/info-user.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { AboutMeComponent } from './about-me/about-me.component';
     HeaderComponent,
     FooterComponent,
     MainInfoComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    InfoUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
