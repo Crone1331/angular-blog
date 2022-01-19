@@ -1,17 +1,19 @@
+
 <div class="container">
   <div class="user__img">
     <img class = 'anon__img' src="assets/img/anon.jpg" alt="">
   </div>
-  <div class="user-info">
-    <div class="user-info__ip">Твой IP: {{responseArr.query}}</div>
-    <div class="user-info__as">Провайдер: {{responseArr.as}}</div>
-    <div class="user-info__place">
-      Страна: {{responseArr.country}}
-      <br>
-       Город: {{responseArr.city}}
-       <br>
-       Регион: {{responseArr.regionName}}
-       <br>
-      </div>
-  </div>
+  <ul *ngIf="ready; else loader" class="user-info">
+    <li>Твой IP: {{responseArr.query}}</li>
+    <li>Провайдер: {{responseArr.as}}</li>
+    <li>Страна: {{responseArr.country}} </li>
+    <li>Город: {{responseArr.city}}</li>
+    <li>Регион: {{responseArr.regionName}}</li>
+    <li>Устройство: {{infoDevice.device}}</li>
+    <li>Браузер: {{infoDevice.browser}}</li>
+  </ul>
 </div>
+
+<ng-template #loader>
+  <div class="user-info">Загрузка...</div>
+</ng-template>
