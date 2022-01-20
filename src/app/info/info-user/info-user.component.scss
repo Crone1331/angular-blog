@@ -1,3 +1,5 @@
+
+
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -24,4 +26,18 @@
     padding-left: 40px;
   }
 
+}
+
+.loading-indicator {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:host ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #1b242f;
 }

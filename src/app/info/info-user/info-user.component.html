@@ -1,19 +1,23 @@
 
-<div class="container">
-  <div class="user__img">
-    <img class = 'anon__img' src="assets/img/anon.jpg" alt="">
+<ng-container *ngIf="pageReady">
+  <div class="loading-indicator" >
+    <mat-progress-spinner [diameter]="200" mode="indeterminate" color="warn"></mat-progress-spinner>
   </div>
-  <ul *ngIf="ready; else loader" class="user-info">
-    <li>Твой IP: {{responseArr.query}}</li>
-    <li>Провайдер: {{responseArr.as}}</li>
-    <li>Страна: {{responseArr.country}} </li>
-    <li>Город: {{responseArr.city}}</li>
-    <li>Регион: {{responseArr.regionName}}</li>
-    <li>Устройство: {{infoDevice.device}}</li>
-    <li>Браузер: {{infoDevice.browser}}</li>
-  </ul>
-</div>
+</ng-container>
 
-<ng-template #loader>
-  <div class="user-info">Загрузка...</div>
-</ng-template>
+<ng-container *ngIf="!pageReady">
+  <div class="container">
+    <div class="user__img">
+      <img class = 'anon__img' src="assets/img/anon.jpg" alt="">
+    </div>
+    <ul class="user-info">
+      <li>Твой IP: {{responseArr.query}}</li>
+      <li>Провайдер: {{responseArr.as}}</li>
+      <li>Страна: {{responseArr.country}} </li>
+      <li>Город: {{responseArr.city}}</li>
+      <li>Регион: {{responseArr.regionName}}</li>
+      <li>Устройство: {{infoDevice.device}}</li>
+      <li>Браузер: {{infoDevice.browser}}</li>
+    </ul>
+  </div>
+</ng-container>
